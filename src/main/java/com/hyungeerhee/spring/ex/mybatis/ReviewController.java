@@ -21,8 +21,7 @@ public class ReviewController {
 	// /mybatis/reveiw?id=3
 	@RequestMapping("/mybatis/review")
 	@ResponseBody
-	public Review review(@RequestParam("id") int id) {
-		
+	public Review review(@RequestParam("id") int id) { // String id =- request.getParameter("id")
 		
 		Review review = reviewService.getReview(id);
 		return review;

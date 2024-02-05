@@ -6,7 +6,8 @@
  <mapper namespace="com.hyungeerhee.spring.ex.mybatis.repository.ReviewRepository">
  
  	<select id="selectReview" 
- 	resultType="com.hyungeerhee.spring.ex.mybatis.domain.Review">
+ 	resultType="com.hyungeerhee.spring.ex.mybatis.domain.Review"
+ 	parameterType="int">
  		SELECT
  				`id`
  				, `storeId`
