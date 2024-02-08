@@ -2,11 +2,13 @@ package com.hyungeerhee.spring.ex.jsp;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.hyungeerhee.spring.ex.jsp.domain.User;
 import com.hyungeerhee.spring.ex.jsp.service.UserService;
 
 @RequestMapping("/jsp/user")
@@ -33,6 +35,18 @@ public class UserController {
 	@GetMapping("/input") 
 	public String inputUser() {
 		return "jsp/userinput";	
+	}
+	
+	@GetMapping("/info")
+	public String userInfo(Model model) {
+		//가장 최근에 추가된 사용자 정보
+		User user = userService.getLastUser();
+		
+		// Model 
+		model.addAttribute("result", user);
+		model.addAttribute("title", "사용자 정보");
+		
+		return "jsp/userinfo";
 	}
 }
 
