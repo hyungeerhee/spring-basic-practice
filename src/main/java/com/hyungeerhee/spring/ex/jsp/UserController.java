@@ -31,6 +31,7 @@ public class UserController {
 			
 		//int count = userService.addUser(name, birthday, email);
 		
+		
 		User user = new User();
 		user.setName(name);
 		user.setYyyymmdd(birthday);
