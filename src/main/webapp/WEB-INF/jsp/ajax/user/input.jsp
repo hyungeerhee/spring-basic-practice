@@ -38,6 +38,7 @@
 							//성공
 							//리스트 페이지로 이동
 							location.href = "/ajax/user/list";
+							
 						} else {
 							//실패
 							alert("추가실패!!");
