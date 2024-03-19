@@ -34,6 +34,7 @@ public class NewUserController {
 		return "/ajax/user/list";
 	}
 	
+	
 	// response 가 json 데이터 형태인 페이지
 	// API 
 	@GetMapping("/create")
